@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Organiza tu hogar en 8 días con solo 15 minutos al día. El sistema 8×8×8 para casas reales.">
+<title>El Reset Diario · Organiza tu hogar en 8 días</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,"script",
+"https://connect.facebook.net/en_US/fbevents.js");
+fbq("init", "26681360534856089");
+fbq("track", "PageView");
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=26681360534856089&ev=PageView&noscript=1"
+/></noscript>
+
+<style>
+  :root {
+    --teal-dark:   #163F3C;
+    --teal-mid:    #1C5F5A;
+    --teal-light:  #2a7a74;
+    --gold:        #C9A07A;
+    --gold-light:  #dbb99a;
+    --cream:       #FAF7F2;
+    --cream-dark:  #F5F0E8;
+    --white:       #ffffff;
+    --text-dark:   #1a1a1a;
+    --text-mid:    #3d3d3d;
+    --text-light:  #A89B8C;
+    --red-soft:    #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ═══════════ TOP BAR ═══════════ */
+  .topbar {
+    background: var(--teal-dark);
+    color: var(--gold-light);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════ HERO ═══════════ */
+  .hero {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-mid) 60%, #1a4a54 100%);
+    color: var(--white);
+    padding: 56px 24px 68px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.08);
+    pointer-events: none;
+  }
+
+  .hero-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0.9;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero h1 em { color: var(--gold-light); font-style: italic; }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+    font-weight: 300;
+    animation: fadeUp 0.7s ease 0.12s both;
+  }
+
+  .hero-mockup {
+    max-width: 380px;
+    width: 92%;
+    margin: 0 auto 32px;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    animation: fadeUp 0.7s ease 0.22s both;
+  }
+
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--teal-dark);
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 18px 42px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(201,168,76,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.7s ease 0.35s both;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.55); }
+
+  .hero-price-hint {
+    margin-top: 12px;
+    font-size: 0.84rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  .hero-badges {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.03em;
+  }
+
+  /* ═══════════ PAIN POINTS ═══════════ */
+  .pain {
+    background: var(--white);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .stitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 5vw, 2.3rem);
+    color: var(--teal-dark);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .slead {
+    font-size: 1rem;
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto 44px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .pain-card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .pain-card .emoji { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .pain-card p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.55; }
+
+  /* ═══════════ SOLUTION ═══════════ */
+  .solution {
+    background: var(--cream);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .sol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .sol-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px 22px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    text-align: left;
+  }
+  .sol-card .sol-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--teal-dark);
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .sol-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--teal-dark);
+    margin-bottom: 8px;
+  }
+  .sol-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+
+  /* ═══════════ PDF PREVIEW — GALLERY ═══════════ */
+  .preview {
+    background: var(--teal-dark);
+    padding: 72px 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .preview .tag { color: var(--gold-light); }
+  .preview .stitle { color: var(--white); }
+  .preview .slead { color: rgba(255,255,255,0.7); }
+
+  .gallery-wrap {
+    overflow: hidden;
+    position: relative;
+    margin: 0 -24px;
+  }
+  .gallery-wrap::before, .gallery-wrap::after {
+    content: ''; position: absolute;
+    top: 0; bottom: 0; width: 70px; z-index: 2; pointer-events: none;
+  }
+  .gallery-wrap::before { left: 0; background: linear-gradient(to right, var(--teal-dark), transparent); }
+  .gallery-wrap::after  { right: 0; background: linear-gradient(to left,  var(--teal-dark), transparent); }
+
+  .gallery-track {
+    display: flex;
+    gap: 18px;
+    padding: 8px 60px;
+    animation: scrollGallery 32s linear infinite;
+    width: max-content;
+  }
+  .gallery-track:hover { animation-play-state: paused; }
+
+  @keyframes scrollGallery {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .gallery-img {
+    height: 260px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+  .gallery-img:hover { transform: scale(1.04); }
+
+  /* Feature detail cards below gallery */
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 920px;
+    margin: 52px auto 0;
+    text-align: left;
+  }
+
+  .feat-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+  }
+  .feat-card:hover { transform: translateY(-4px); }
+
+  .feat-card img {
+    width: 100%; height: 200px;
+    object-fit: cover; object-position: top;
+    display: block;
+  }
+
+  .feat-card-body {
+    padding: 20px;
+  }
+  .feat-card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.02rem;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+  .feat-card-body p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  /* ═══════════ STEPS ═══════════ */
+  .steps {
+    background: var(--white);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .steps-list {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: left;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .steps-list li {
+    counter-increment: step;
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .steps-list li:last-child { border-bottom: none; }
+
+  .steps-list li::before {
+    content: counter(step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--teal-dark);
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .step-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--teal-dark);
+    margin-bottom: 4px;
+  }
+  .step-text p { font-size: 0.88rem; color: var(--text-light); line-height: 1.55; }
+
+  /* ═══════════ TESTIMONIALS ═══════════ */
+  .testi {
+    background: var(--cream);
+    padding: 64px 24px;
+    text-align: center;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .testi-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    text-align: left;
+  }
+  .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 12px; letter-spacing: 2px; }
+  .testi-card blockquote {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+  .testi-card cite {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  /* ═══════════ AUTHOR ═══════════ */
+  .author {
+    background: var(--cream-dark);
+    padding: 72px 24px;
+  }
+
+  .author-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .author-photo {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  }
+
+  .author-text .tag { text-align: left; display: block; }
+  .author-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: var(--teal-dark);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+  .author-text p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .author-text p strong { color: var(--teal-dark); }
+
+  /* ═══════════ PRICING ═══════════ */
+  .pricing {
+    background: var(--white);
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .price-box {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal-mid));
+    color: var(--white);
+    border-radius: 20px;
+    padding: 44px 32px;
+    max-width: 420px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(29,95,106,0.3);
+  }
+  .price-box::before {
+    content: ''; position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .price-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--teal-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+  }
+
+  .price-product {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    margin-bottom: 4px;
+  }
+
+  .price-series {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 18px;
+  }
+
+  .price-old {
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-amount span { font-size: 1.5rem; font-weight: 400; vertical-align: super; margin-right: 3px; }
+
+  .price-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 24px;
+  }
+
+  .price-features {
+    list-style: none;
+    margin-bottom: 28px;
+    text-align: left;
+  }
+  .price-features li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.85);
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex; gap: 10px; align-items: center;
+  }
+  .price-features li:last-child { border-bottom: none; }
+  .price-features li::before {
+    content: '✓'; color: var(--gold-light); font-weight: 700; flex-shrink: 0;
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--teal-dark);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(201,168,76,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; z-index: 1;
+  }
+  .btn-block:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(201,168,76,0.55); }
+
+  .price-secure {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ═══════════ FINAL CTA ═══════════ */
+  .final {
+    background: linear-gradient(135deg, var(--teal-dark), #1a4a54);
+    padding: 80px 24px;
+    text-align: center;
+    color: var(--white);
+  }
+  .final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 5vw, 2.6rem);
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .final h2 em { color: var(--gold-light); font-style: italic; }
+  .final p { color: rgba(255,255,255,0.7); margin-bottom: 32px; font-weight: 300; }
+  .final .hero-price-hint { margin-top: 14px; }
+
+  /* ═══════════ STICKY BAR ═══════════ */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--teal-dark);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-bar-text {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+  }
+  .sticky-bar-text strong { color: var(--gold-light); }
+  .sticky-bar .btn-sm {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--teal-dark);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+  .sticky-bar .btn-sm:hover { transform: translateY(-1px); }
+
+  /* ═══════════ FOOTER ═══════════ */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px 24px 80px; /* extra bottom for sticky bar */
+    font-size: 0.78rem;
+  }
+  footer a { color: var(--gold-light); text-decoration: none; }
+
+  /* ═══════════ RESPONSIVE ═══════════ */
+  @media (max-width: 640px) {
+    .author-inner { grid-template-columns: 1fr; text-align: center; }
+    .author-photo { margin: 0 auto; }
+    .author-text .tag { text-align: center; }
+    .gallery-img { height: 200px; }
+    .feat-grid { grid-template-columns: 1fr; }
+    .sticky-bar-text { display: none; }
+  }
+
+  /* ═══════════ ANIMATIONS ═══════════ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ▸ TOP BAR -->
+<div class="topbar">✨ Descarga inmediata · PDF listo para usar hoy mismo</div>
+
+<!-- ▸ HERO -->
+<section class="hero">
+  <div class="hero-logo">Donna e Mobili · Serie 8×8×8</div>
+  <p class="hero-eyebrow">Sistema 8 × 8 × 8</p>
+  <h1>Organiza tu hogar<br>en <em>8 días</em></h1>
+  <p class="hero-sub">Con solo 15 minutos al día. Sin ser perfecta. Sin vaciarlo todo. Sin empezar de cero.</p>
+  <img src="no_es_tu_culpa.webp" alt="No es tu culpa — El Reset Diario" class="hero-mockup">
+  <a href="https://pay.hotmart.com/K105330651P" class="btn">Comprar ahora · Solo €17 →</a>
+  <p class="hero-price-hint">Descarga inmediata en PDF</p>
+  <p class="hero-badges">✓ Formato PDF · ✓ Acceso inmediato · ✓ Incluye bonus</p>
+</section>
+
+<!-- ▸ PAIN POINTS -->
+<section class="pain">
+  <span class="tag">¿Te suena familiar?</span>
+  <h2 class="stitle">Limpias, ordenas… y al día siguiente<br>todo vuelve al caos</h2>
+  <p class="slead"></p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <span class="emoji">😩</span>
+      <p><strong>Limpias un sábado entero</strong> y el lunes ya parece que no hiciste nada.</p>
+    </div>
+    <div class="pain-card">
+      <span class="emoji">😤</span>
+      <p><strong>Sientes que eres la única</strong> que se preocupa por el orden en tu casa.</p>
+    </div>
+    <div class="pain-card">
+      <span class="emoji">😔</span>
+      <p><strong>Ves casas perfectas en Instagram</strong> y piensas "la mía nunca va a estar así".</p>
+    </div>
+    <div class="pain-card">
+      <span class="emoji">🤯</span>
+      <p><strong>No sabes por dónde empezar.</strong> Todo está desordenado y te bloqueas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ SOLUTION -->
+<section class="solution">
+  <span class="tag">La solución</span>
+  <h2 class="stitle">No es tu culpa. Es tu sistema.</h2>
+  <p class="slead">El Reset Diario te da un método paso a paso que funciona en casas reales, con familias reales.</p>
+  <div class="sol-grid">
+    <div class="sol-card">
+      <div class="sol-check">✓</div>
+      <h3>8 problemas reales</h3>
+      <p>Que todas tenemos en casa, identificados y resueltos uno por uno.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-check">✓</div>
+      <h3>8 soluciones prácticas</h3>
+      <p>Que puedes aplicar HOY, sin comprar nada, sin tirar nada.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-check">✓</div>
+      <h3>Plan de 8 días</h3>
+      <p>Con pasos de 15 minutos. Un área por día. Sin agobios.</p>
+    </div>
+    <div class="sol-card">
+      <div class="sol-check">✓</div>
+      <h3>Checklist descargable</h3>
+      <p>Para que veas tu progreso y no pierdas el ritmo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ PDF PREVIEW GALLERY — NEW -->
+<section class="preview">
+  <span class="tag">Mira el PDF por dentro</span>
+  <h2 class="stitle">No es un libro de decoración.<br>Es una guía de acción.</h2>
+  <p class="slead">Práctica, visual y lista para usar desde hoy. Esto es lo que vas a recibir:</p>
+
+  <div class="gallery-wrap">
+    <div class="gallery-track">
+      <img src="1.png" alt="Portada El Reset Diario" class="gallery-img">
+      <img src="4.png" alt="Los 8 problemas" class="gallery-img">
+      <img src="5.png" alt="Problema 1 — La cama sin hacer" class="gallery-img">
+      <img src="6.png" alt="Plan de 8 días" class="gallery-img">
+      <img src="7.png" alt="Checklist de mantenimiento" class="gallery-img">
+      <img src="mockup_Excel_Frigorifico.png" alt="Planificador semanal — bonus" class="gallery-img">
+      <img src="2.png" alt="Carta de Paola" class="gallery-img">
+      <!-- duplicate for infinite scroll -->
+      <img src="1.png" alt="Portada El Reset Diario" class="gallery-img">
+      <img src="4.png" alt="Los 8 problemas" class="gallery-img">
+      <img src="5.png" alt="Problema 1 — La cama sin hacer" class="gallery-img">
+      <img src="6.png" alt="Plan de 8 días" class="gallery-img">
+      <img src="7.png" alt="Checklist de mantenimiento" class="gallery-img">
+      <img src="mockup_Excel_Frigorifico.png" alt="Planificador semanal — bonus" class="gallery-img">
+      <img src="2.png" alt="Carta de Paola" class="gallery-img">
+    </div>
+  </div>
+
+  <div class="feat-grid">
+    <div class="feat-card">
+      <img src="5.png" alt="8 problemas reales">
+      <div class="feat-card-body">
+        <h3>8 Problemas Reales</h3>
+        <p>Cada sección empieza por el problema — tal como lo vivís en tu casa.</p>
+      </div>
+    </div>
+    <div class="feat-card">
+      <img src="6.png" alt="Plan de 8 días">
+      <div class="feat-card-body">
+        <h3>Plan de 8 Días</h3>
+        <p>Una acción por día. Sin acumular. Empiezas cuando quieras.</p>
+      </div>
+    </div>
+    <div class="feat-card">
+      <img src="7.png" alt="Checklist imprimible">
+      <div class="feat-card-body">
+        <h3>Checklist Imprimible</h3>
+        <p>Imprime, pega en la heladera y marca cada día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ STEPS -->
+<section class="steps">
+  <span class="tag">Lo que incluye</span>
+  <h2 class="stitle">Tu guía completa de Reset</h2>
+  <p class="slead"></p>
+  <ol class="steps-list">
+    <li>
+      <div class="step-text">
+        <h3>Diagnóstico: los 8 problemas</h3>
+        <p>Identifica exactamente qué está fallando en tu hogar y por qué el desorden siempre vuelve.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-text">
+        <h3>Las 8 soluciones del sistema</h3>
+        <p>Métodos probados que funcionan en casas reales, no en fotos de revista.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-text">
+        <h3>Plan día por día (8 días)</h3>
+        <p>Cada día una zona. 15 minutos. Instrucciones exactas de qué hacer.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-text">
+        <h3>Bonus: Checklist + Planificador Semanal</h3>
+        <p>Checklist imprimible y planificador de limpieza semanal incluido.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ▸ TESTIMONIALS -->
+<section class="testi">
+  <span class="tag">Lo que dicen quienes ya lo probaron</span>
+  <h2 class="stitle" style="margin-bottom:40px"></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"Pensé que mi casa era un caso perdido. Al día 3 ya sentía la diferencia. Es como si alguien finalmente entendiera mi situación."</blockquote>
+      <cite>— María C., Madrid</cite>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"Solo 15 minutos al día. Es lo único que he podido mantener con dos niños en casa. Gracias."</blockquote>
+      <cite>— Valentina R., Buenos Aires</cite>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"Lo mejor es que no me pidió tirar todo ni comprar organizadores caros. Soluciones reales."</blockquote>
+      <cite>— Laura G., Ciudad de México</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ AUTHOR — NEW -->
+<section class="author">
+  <div class="author-inner">
+    <img src="20260424_104213.jpg" alt="Paola Berrini — Donna e Mobili" class="author-photo">
+    <div class="author-text">
+      <span class="tag">Quién soy</span>
+      <h2>Hola, soy Paola.<br>Italo-argentina. Viviendo en Italia.</h2>
+      <p>Esta guía no nació de una casa perfecta. Nació de una casa real — con días sin hacer la cama, con ropa encima de la silla y la cocina que espera.</p>
+      <p>Soy la creadora de <strong>Donna e Mobili</strong> y del concepto <strong>Cortisol Home Dressing</strong>. Llevo años estudiando cómo funciona el orden en hogares reales — no en los de Instagram.</p>
+      <p>Lo que encontré es que <strong>el problema nunca es la pereza</strong>. Es no tener un sistema que se adapte a tu vida. La Serie 8×8×8 nació de eso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▸ PRICING -->
+<section class="pricing">
+  <span class="tag">Empieza hoy</span>
+  <h2 class="stitle" style="margin-bottom:44px">Tu hogar organizado en 8 días.</h2>
+
+  <div class="price-box">
+    <div class="price-badge">Precio de lanzamiento</div>
+    <div class="price-product">El Reset Diario</div>
+    <p class="price-series">PDF descargable · Serie 8×8×8</p>
+    <div class="price-old">€37</div>
+    <div class="price-amount"><span>€</span>17</div>
+    <p class="price-label">Pago único · Sin suscripción</p>
+    <ul class="price-features">
+      <li>Guía PDF completa (+30 páginas)</li>
+      <li>Los 8 problemas + 8 soluciones</li>
+      <li>Plan de acción de 8 días · 15 min/día</li>
+      <li>Checklist de mantenimiento diario</li>
+      <li>Planificador de limpieza semanal</li>
+      <li>Descarga inmediata</li>
+    </ul>
+    <a href="https://pay.hotmart.com/K105330651P" class="btn-block">Sí, quiero empezar →</a>
+    <p class="price-secure">🔒 Pago seguro · Acceso inmediato · Incluye bonus</p>
+  </div>
+</section>
+
+<!-- ▸ FINAL CTA -->
+<section class="final">
+  <h2>Una casa no se mantiene de golpe.<br>Se mantiene, <em>un poco, cada día.</em></h2>
+  <p>Empieza hoy. 8 días. €17. Resultado visible desde el Día 1.</p>
+  <a href="https://pay.hotmart.com/K105330651P" class="btn">Quiero mi Reset Diario →</a>
+  <p class="hero-price-hint">Descarga inmediata · PDF en español</p>
+</section>
+
+<!-- ▸ FOOTER -->
+<footer>
+  <p>© 2025 Paola Berrini · <a href="https://donnaemobili.com">Donna e Mobili</a> · Serie 8×8×8</p>
+  <p style="margin-top:6px">El orden que cabe en tu vida · Para las que viven en casas reales</p>
+</footer>
+
+<!-- ▸ STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-bar-text"><strong>€17</strong> · El Reset Diario</span>
+  <a href="https://pay.hotmart.com/K105330651P" class="btn-sm">Comprar ahora</a>
+</div>
+
+<script>
+  // Show sticky bar on scroll
+  const bar = document.getElementById('stickyBar');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 600) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+    lastY = y;
+  });
+</script>
+
+</body>
+</html>
